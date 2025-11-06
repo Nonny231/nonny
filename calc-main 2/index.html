@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator - Responsive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+            <h1>SPLI<br>TTER</h1>
+        </div>
+
+        <!-- Calculator Card -->
+        <div class="calculator-card">
+            <div class="calculator-grid">
+                <!-- Left Side - Input Section -->
+                <div class="input-section">
+                    <!-- Bill Input -->
+                    <div class="input-group">
+                        <label for="bill-input">Bill</label>
+                        <div class="input-wrapper">
+                            <span class="dollar-sign">$</span>
+                            <input type="number" id="bill-input" placeholder="0" step="0.01" aria-label="Enter bill amount">
+                        </div>
+                        <div class="error-message" id="bill-error"></div>
+                    </div>
+
+                    <!-- Tip Selection -->
+                    <div class="input-group">
+                        <label>Select Tip %</label>
+                        <div class="tip-buttons">
+                            <button class="tip-btn" data-tip="5" aria-label="5 percent tip">5%</button>
+                            <button class="tip-btn" data-tip="10" aria-label="10 percent tip">10%</button>
+                            <button class="tip-btn" data-tip="15" aria-label="15 percent tip">15%</button>
+                            <button class="tip-btn" data-tip="25" aria-label="25 percent tip">25%</button>
+                            <button class="tip-btn" data-tip="50" aria-label="50 percent tip">50%</button>
+                            <input type="number" id="custom-tip" placeholder="Custom" step="0.01" aria-label="Enter custom tip percentage">
+                        </div>
+                        <div class="error-message" id="tip-error"></div>
+                    </div>
+
+                    <!-- Number of People -->
+                    <div class="input-group">
+                        <label for="people-input">Number of People</label>
+                        <div class="input-wrapper people-wrapper">
+                            <span class="person-icon">👤</span>
+                            <input type="number" id="people-input" value="1" min="1" aria-label="Number of people">
+                            <div class="people-controls">
+                                <button id="people-up" aria-label="Increase number of people" type="button">+</button>
+                                <button id="people-down" aria-label="Decrease number of people" type="button">-</button>
+                            </div>
+                        </div>
+                        <div class="error-message" id="people-error"></div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Results Section -->
+                <div class="results-section">
+                    <div class="results-content">
+                        <!-- Tip Amount -->
+                        <div class="result-item">
+                            <div class="result-label">
+                                <div class="label-text">Tip Amount</div>
+                                <div class="label-subtext">/ person</div>
+                            </div>
+                            <div class="result-value" id="tip-amount" aria-live="polite">$0.00</div>
+                        </div>
+
+                        <!-- Total -->
+                        <div class="result-item">
+                            <div class="result-label">
+                                <div class="label-text">Total</div>
+                                <div class="label-subtext">/ person</div>
+                            </div>
+                            <div class="result-value" id="total-amount" aria-live="polite">$0.00</div>
+                        </div>
+                    </div>
+
+                    <!-- Reset Button -->
+                    <button id="reset-btn" class="reset-button" aria-label="Reset calculator">RESET</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
